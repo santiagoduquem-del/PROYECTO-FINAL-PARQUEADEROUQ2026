@@ -37,4 +37,15 @@ public class Tarifa {
     public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
+
+    @Override
+    public String toString() {
+        return "Tarifa{" +
+                "tipoVehiculo='" + tipoVehiculo + '\'' +
+                ", valorPorHora=" + valorPorHora +
+                ", descuento=" + descuento +
+                '}';
+    }
 }
+
+

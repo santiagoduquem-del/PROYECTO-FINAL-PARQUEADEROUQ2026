@@ -5,4 +5,9 @@ public class Administrador extends Empleado{
     public Administrador(String nombre, int identificacion, String correo, int telefono, String usuario, String rol, String clave) {
         super(nombre, identificacion, correo, telefono, usuario, rol, clave);
     }
+
+    @Override
+    public String toString() {
+        return "Administrador{}";
+    }
 }

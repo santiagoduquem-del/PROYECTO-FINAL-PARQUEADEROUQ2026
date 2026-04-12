@@ -95,5 +95,19 @@ public class Parqueadero {
     public void setListEmpreadoParqueadero(List<Empleado> listEmpreadoParqueadero) {
         this.listEmpreadoParqueadero = listEmpreadoParqueadero;
     }
+
+    @Override
+    public String toString() {
+        return "Parqueadero{" +
+                "nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", nit=" + nit +
+                ", listEspacioParqueadero=" + listEspacioParqueadero +
+                ", listVehiculoParqueadero=" + listVehiculoParqueadero +
+                ", listUsuarioParqueadero=" + listUsuarioParqueadero +
+                ", listTarifaParqueadero=" + listTarifaParqueadero +
+                ", listEmpreadoParqueadero=" + listEmpreadoParqueadero +
+                '}';
+    }
 }
 

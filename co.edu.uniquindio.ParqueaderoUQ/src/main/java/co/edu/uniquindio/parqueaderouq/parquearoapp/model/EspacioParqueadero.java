@@ -50,5 +50,13 @@ public class EspacioParqueadero {
         this.theVehiculoAsignado = theVehiculoAsignado;
     }
 
-
+    @Override
+    public String toString() {
+        return "EspacioParqueadero{" +
+                "codigo='" + codigo + '\'' +
+                ", tipoEspacio='" + tipoEspacio + '\'' +
+                ", estado='" + estado + '\'' +
+                ", theVehiculoAsignado=" + theVehiculoAsignado +
+                '}';
+    }
 }

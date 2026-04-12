@@ -58,4 +58,15 @@ public class Usuario {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nombre='" + nombre + '\'' +
+                ", identificacion=" + identificacion +
+                ", correo='" + correo + '\'' +
+                ", telefono=" + telefono +
+                ", tipoUsuario='" + tipoUsuario + '\'' +
+                '}';
+    }
 }

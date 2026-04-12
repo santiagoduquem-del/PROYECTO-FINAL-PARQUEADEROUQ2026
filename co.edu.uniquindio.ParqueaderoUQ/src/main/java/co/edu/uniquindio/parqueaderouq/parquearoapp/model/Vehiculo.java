@@ -92,4 +92,18 @@ private EspacioParqueadero theEspacioAsignado;
     public void setEspacioAsignado(EspacioParqueadero EspacioAsignado) {
         this.theEspacioAsignado = EspacioAsignado;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "placa='" + placa + '\'' +
+                ", tipoVehiculo='" + tipoVehiculo + '\'' +
+                ", marca='" + marca + '\'' +
+                ", nombreConductor='" + nombreConductor + '\'' +
+                ", identificacionConductor=" + identificacionConductor +
+                ", horaIngreso=" + horaIngreso +
+                ", estado='" + estado + '\'' +
+                ", theEspacioAsignado=" + theEspacioAsignado +
+                '}';
+    }
 }
