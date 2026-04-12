@@ -1,27 +1,23 @@
 package co.edu.uniquindio.parqueaderouq.parquearoapp.model;
 
-public abstract class Empleado {
+public class Usuario {
 
     private String nombre;
     private int identificacion;
     private String correo;
     private int telefono;
-    private String usuario;
-    private String clave;
-    private String rol;
+    private String tipoUsuario;
 
 
-    public Empleado(String nombre, int identificacion,
-                    String correo, int telefono, String usuario,
-                    String rol, String clave) {
+    public Usuario(String nombre, int identificacion,
+                   String correo, int telefono, String tipoUsuario) {
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.correo = correo;
         this.telefono = telefono;
-        this.usuario = usuario;
-        this.rol = rol;
-        this.clave = clave;
+        this.tipoUsuario = tipoUsuario;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -55,27 +51,11 @@ public abstract class Empleado {
         this.telefono = telefono;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getTipoUsuario() {
+        return tipoUsuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
-
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 }
