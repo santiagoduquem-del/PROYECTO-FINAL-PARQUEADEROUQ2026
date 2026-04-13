@@ -13,4 +13,9 @@ module co.edu.uniquindio.parqueaderouq.parquearoapp {
 
     opens co.edu.uniquindio.parqueaderouq.parquearoapp to javafx.fxml;
     exports co.edu.uniquindio.parqueaderouq.parquearoapp;
+
+    opens co.edu.uniquindio.parqueaderouq.parquearoapp.controller;
+    exports co.edu.uniquindio.parqueaderouq.parquearoapp.controller;
+
+
 }

@@ -1,4 +1,4 @@
 package co.edu.uniquindio.parqueaderouq.parquearoapp.model;
 
-public class Administrador extends Empleado{
+public class Administrador extends Empleado {
 }
