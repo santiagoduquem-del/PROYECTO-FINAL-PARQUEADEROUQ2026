@@ -10,9 +10,9 @@ import java.io.IOException;
 public class ClienteApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("Cliente.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("Login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Gestión de Clientes - Parqueadero UQ");
+        stage.setTitle("Login - Parqueadero UQ");
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();
