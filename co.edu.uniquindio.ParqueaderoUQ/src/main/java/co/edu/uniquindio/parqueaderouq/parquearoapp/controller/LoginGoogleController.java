@@ -3,6 +3,7 @@ package co.edu.uniquindio.parqueaderouq.parquearoapp.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import co.edu.uniquindio.parqueaderouq.parquearoapp.utils.DataHolder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,18 +33,31 @@ public class LoginGoogleController {
     private Button btnIngresoGoogleSantiagoOperador;
 
     @FXML
+    private Button btnIngresoGoogleSantiagoAdministrador;
+
+    @FXML
     void onIngresarGoogleSantiagoOperador(ActionEvent event) {
-        // Abre la ventana de ContraseñaLoginGoogle.fxml
+        DataHolder.getInstance().setLoginRole("OPERADOR");
+        irAContrasenaGoogle(btnIngresoGoogleSantiagoOperador);
+    }
+
+    @FXML
+    void onIngresoGoogleSantiagoAdministrador(ActionEvent event) {
+        DataHolder.getInstance().setLoginRole("ADMIN");
+        irAContrasenaGoogle(btnIngresoGoogleSantiagoAdministrador);
+    }
+
+    private void irAContrasenaGoogle(Button botonOrigen) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("ContraseñaLoginGoogle.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) btnIngresoGoogleSantiagoOperador.getScene().getWindow();
+            Stage stage = (Stage) botonOrigen.getScene().getWindow();
             stage.setTitle("Contraseña Google - Parqueadero UQ");
             stage.setScene(scene);
             stage.setFullScreen(true);
             stage.show();
         } catch (IOException e) {
-            mostrarMensaje("Error", "Error de carga", "No se pudo cargar la ventana de Contraseña Google: " + e.getMessage(), Alert.AlertType.ERROR);
+            mostrarMensaje("Error", "Error de carga", "No se pudo cargar la ventana de contraseña: " + e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
         }
     }
@@ -58,26 +72,16 @@ public class LoginGoogleController {
 
     @FXML
     void initialize() {
-        assert btnIngresoGoogleSantiagoOperador != null : "fx:id=\"btnIngresoGoogleSantiagoOperador\" was not injected: check your FXML file 'LoginGoogle.fxml'.";
-
         if (mainStackPane != null && scalingGroup != null) {
             double initialWidth = 988.0;
-            double initialHeight = 634.0; // Ajustado a la altura de tu FXML
-
+            double initialHeight = 634.0;
             mainStackPane.widthProperty().addListener((obs, oldVal, newVal) -> {
-                double scaleX = newVal.doubleValue() / initialWidth;
-                double scaleY = mainStackPane.getHeight() / initialHeight;
-                double scale = Math.min(scaleX, scaleY);
-                scalingGroup.setScaleX(scale);
-                scalingGroup.setScaleY(scale);
+                double scale = Math.min(newVal.doubleValue() / initialWidth, mainStackPane.getHeight() / initialHeight);
+                scalingGroup.setScaleX(scale); scalingGroup.setScaleY(scale);
             });
-
             mainStackPane.heightProperty().addListener((obs, oldVal, newVal) -> {
-                double scaleX = mainStackPane.getWidth() / initialWidth;
-                double scaleY = newVal.doubleValue() / initialHeight;
-                double scale = Math.min(scaleX, scaleY);
-                scalingGroup.setScaleX(scale);
-                scalingGroup.setScaleY(scale);
+                double scale = Math.min(mainStackPane.getWidth() / initialWidth, newVal.doubleValue() / initialHeight);
+                scalingGroup.setScaleX(scale); scalingGroup.setScaleY(scale);
             });
         }
     }

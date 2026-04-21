@@ -47,32 +47,45 @@ public class LoginAppleController {
 
     private void verificarAcceso() {
         String contrasena = PasswordContraseñaApple.getText();
-        String contrasenaCorrecta = "1224"; // Usando la misma contraseña de operador para consistencia
 
         if (contrasena == null || contrasena.isEmpty()) {
             mostrarMensaje("Error", "Campo vacío", "Por favor ingrese su Apple ID password.", Alert.AlertType.ERROR);
             return;
         }
 
-        if (contrasena.equals(contrasenaCorrecta)) {
-            mostrarMensaje("Éxito", "Autenticación Apple ID", "Acceso concedido exitosamente.", Alert.AlertType.INFORMATION);
-            abrirVentanaCliente();
+        if (contrasena.equals("1228")) {
+            abrirMenuAdministrador();
+        } else if (contrasena.equals("1224")) {
+            abrirMenuOperador();
         } else {
             mostrarMensaje("Error", "Autenticación fallida", "La contraseña de Apple ID es incorrecta.", Alert.AlertType.ERROR);
         }
     }
 
-    private void abrirVentanaCliente() {
+    private void abrirMenuOperador() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("Cliente.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("MenuFuncionesOperador.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) btnContinuarAppleLogin.getScene().getWindow();
-            stage.setTitle("Gestión de Clientes - Parqueadero UQ");
+            stage.setTitle("Menú Operador - Parqueadero UQ");
             stage.setScene(scene);
             stage.setFullScreen(true);
             stage.show();
         } catch (IOException e) {
-            mostrarMensaje("Error", "Error de carga", "No se pudo cargar la ventana de clientes: " + e.getMessage(), Alert.AlertType.ERROR);
+            e.printStackTrace();
+        }
+    }
+
+    private void abrirMenuAdministrador() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("MenuFuncionesAdministrador.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) btnContinuarAppleLogin.getScene().getWindow();
+            stage.setTitle("Menú Administrador - Parqueadero UQ");
+            stage.setScene(scene);
+            stage.setFullScreen(true);
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

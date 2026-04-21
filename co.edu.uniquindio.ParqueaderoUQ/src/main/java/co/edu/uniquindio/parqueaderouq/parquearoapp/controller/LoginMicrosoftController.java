@@ -47,14 +47,14 @@ public class LoginMicrosoftController {
 
     private void continuarAPassword() {
         String user = UserMicrosoftLogin.getText();
-        String idCorrecto = "1234567"; // ID del operador solicitado
 
         if (user == null || user.isEmpty()) {
             mostrarMensaje("Error", "Campo vacío", "Por favor ingrese su Microsoft ID.", Alert.AlertType.ERROR);
             return;
         }
 
-        if (user.equals(idCorrecto)) {
+        // Permitir avanzar si es el ID del operador o el ID ADMIN
+        if (user.equals("1234567") || user.equals("ADMIN")) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("ContraseñaLoginMicrosoft.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());

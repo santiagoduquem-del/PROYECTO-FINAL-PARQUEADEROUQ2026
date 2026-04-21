@@ -16,6 +16,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import co.edu.uniquindio.parqueaderouq.parquearoapp.ClienteApplication;
+import co.edu.uniquindio.parqueaderouq.parquearoapp.utils.DataHolder;
 
 public class LoginController {
 
@@ -59,8 +60,15 @@ public class LoginController {
             return;
         }
 
-        if (identificacion.equals("1234567") && contrasena.equals("1224")) {
-            abrirVentanaCliente();
+        // Acceso Administrador (ADMIN / 1228)
+        if (identificacion.equals("ADMIN") && contrasena.equals("1228")) {
+            DataHolder.getInstance().setLoginRole("ADMIN");
+            abrirMenuAdministrador();
+        } 
+        // Acceso Operador (1234567 / 1224)
+        else if (identificacion.equals("1234567") && contrasena.equals("1224")) {
+            DataHolder.getInstance().setLoginRole("OPERADOR");
+            abrirMenuOperador();
         } else {
             mostrarMensaje("Error", "Autenticación fallida", "Identificación o contraseña incorrectas.", AlertType.ERROR);
         }
@@ -114,17 +122,32 @@ public class LoginController {
         }
     }
 
-    private void abrirVentanaCliente() {
+    private void abrirMenuOperador() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("Cliente.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("MenuFuncionesOperador.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) btnIngreso.getScene().getWindow();
-            stage.setTitle("Gestión de Clientes - Parqueadero UQ");
+            stage.setTitle("Menú Operador - Parqueadero UQ");
             stage.setScene(scene);
             stage.setFullScreen(true);
             stage.show();
         } catch (IOException e) {
-            mostrarMensaje("Error", "Error de carga", "No se pudo cargar la ventana de clientes: " + e.getMessage(), AlertType.ERROR);
+            mostrarMensaje("Error", "Error de carga", "No se pudo cargar el menú del operador: " + e.getMessage(), AlertType.ERROR);
+            e.printStackTrace();
+        }
+    }
+
+    private void abrirMenuAdministrador() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("MenuFuncionesAdministrador.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) btnIngreso.getScene().getWindow();
+            stage.setTitle("Menú Administrador - Parqueadero UQ");
+            stage.setScene(scene);
+            stage.setFullScreen(true);
+            stage.show();
+        } catch (IOException e) {
+            mostrarMensaje("Error", "Error de carga", "No se pudo cargar el menú del administrador: " + e.getMessage(), AlertType.ERROR);
             e.printStackTrace();
         }
     }

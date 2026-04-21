@@ -1,4 +1,9 @@
 package co.edu.uniquindio.parqueaderouq.parquearoapp.model;
 
-public enum tipoVehiculo {
+public enum tipoVehiculo
+{
+    CARRO,
+    MOTO,
+    BICICLETA
+
 }
