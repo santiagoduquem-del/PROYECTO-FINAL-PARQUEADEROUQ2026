@@ -17,5 +17,9 @@ module co.edu.uniquindio.parqueaderouq.parquearoapp {
     opens co.edu.uniquindio.parqueaderouq.parquearoapp.controller;
     exports co.edu.uniquindio.parqueaderouq.parquearoapp.controller;
 
+    opens co.edu.uniquindio.parqueaderouq.parquearoapp.model;
+    exports co.edu.uniquindio.parqueaderouq.parquearoapp.model;
 
+    opens co.edu.uniquindio.parqueaderouq.parquearoapp.utils;
+    exports co.edu.uniquindio.parqueaderouq.parquearoapp.utils;
 }

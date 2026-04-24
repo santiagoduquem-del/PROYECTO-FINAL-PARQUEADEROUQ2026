@@ -1,23 +1,24 @@
 package co.edu.uniquindio.parqueaderouq.parquearoapp.model;
 
-public class Usuario {
+import java.io.Serializable;
 
+public abstract class Usuario implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String nombre;
-    private int identificacion;
+    private String identificacion;
     private String correo;
-    private int telefono;
-    private String tipoUsuario;
+    private String telefono;
+    private tipoUsuario tipo;
 
-
-    public Usuario(String nombre, int identificacion,
-                   String correo, int telefono, String tipoUsuario) {
+    public Usuario(String nombre, String identificacion, String correo, String telefono, tipoUsuario tipo) {
         this.nombre = nombre;
         this.identificacion = identificacion;
         this.correo = correo;
         this.telefono = telefono;
-        this.tipoUsuario = tipoUsuario;
+        this.tipo = tipo;
     }
 
+    public Usuario() {}
 
     public String getNombre() {
         return nombre;
@@ -27,11 +28,11 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public int getIdentificacion() {
+    public String getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificacion(int identificacion) {
+    public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
 
@@ -43,30 +44,19 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public String getTipoUsuario() {
-        return tipoUsuario;
+    public tipoUsuario getTipo() {
+        return tipo;
     }
 
-    public void setTipoUsuario(String tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "nombre='" + nombre + '\'' +
-                ", identificacion=" + identificacion +
-                ", correo='" + correo + '\'' +
-                ", telefono=" + telefono +
-                ", tipoUsuario='" + tipoUsuario + '\'' +
-                '}';
+    public void setTipo(tipoUsuario tipo) {
+        this.tipo = tipo;
     }
 }

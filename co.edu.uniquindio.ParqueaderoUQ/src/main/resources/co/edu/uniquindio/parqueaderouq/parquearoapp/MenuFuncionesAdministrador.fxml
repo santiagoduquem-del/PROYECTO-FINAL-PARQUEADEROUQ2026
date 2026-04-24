@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="mainStackPane" prefHeight="634.0" prefWidth="988.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parqueaderouq.parquearoapp.controller.MenuFuncionesAdministradorController">
+   <children>
+      <Group fx:id="scalingGroup">
+         <children>
+            <AnchorPane prefHeight="634.0" prefWidth="988.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <ImageView fitHeight="96.0" fitWidth="254.0" layoutX="73.0" layoutY="308.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="96.0" fitWidth="254.0" layoutX="378.0" layoutY="308.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="82.0" fitWidth="71.0" layoutX="474.0" layoutY="529.0">
+                     <image>
+                        <Image url="@imagenes/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="159.0" fitWidth="425.0" layoutX="289.0" layoutY="50.0">
+                     <image>
+                        <Image url="@imagenes/img_33.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="txtMenuAdmin" layoutX="314.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Administrador">
+                     <font>
+                        <Font size="42.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblGestionTarifas" layoutX="439.0" layoutY="341.0" text="Gestion Tarifas">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblGestionEspacios" layoutX="107.0" layoutY="341.0" text="Gestion de espacios">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnGestionarEspacios" layoutX="72.0" layoutY="308.0" mnemonicParsing="false" onAction="#onGestionarEspacios" opacity="0.0" prefHeight="96.0" prefWidth="254.0" text="Gestion de espacios" />
+                  <Button fx:id="btnGestionarTarifas" layoutX="378.0" layoutY="308.0" mnemonicParsing="false" onAction="#onGestionarTarifas" opacity="0.0" prefHeight="96.0" prefWidth="254.0" text="Gestion Tarifas" />
+                  <ImageView fitHeight="96.0" fitWidth="254.0" layoutX="686.0" layoutY="308.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblRegistroDeUsuarios" layoutX="717.0" layoutY="341.0" text="Registro de usuarios">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnRegistroDeUsuarios" layoutX="686.0" layoutY="308.0" mnemonicParsing="false" onAction="#onRegistroDeUsuarios" opacity="0.0" prefHeight="96.0" prefWidth="254.0" text="Registro Usuarios" />
+                  <ImageView fitHeight="40.0" fitWidth="71.0" layoutX="22.0" layoutY="22.0">
+                     <image>
+                        <Image url="@imagenes/img_48.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnRegresarLogin" layoutX="32.0" layoutY="22.0" mnemonicParsing="false" onAction="#onRegresarLogin" opacity="0.0" prefHeight="40.0" prefWidth="52.0" text="Regresar" />
+               </children>
+            </AnchorPane>
+         </children>
+      </Group>
+   </children>
+</StackPane>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="mainStackPane" prefHeight="634.0" prefWidth="988.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parqueaderouq.parquearoapp.controller.SalidaDeVehiculosController">
+   <children>
+      <Group fx:id="scalingGroup">
+         <children>
+            <AnchorPane prefHeight="634.0" prefWidth="988.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <ImageView fitHeight="159.0" fitWidth="425.0" layoutX="302.0" layoutY="37.0">
+                     <image>
+                        <Image url="@imagenes/img_33.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="381.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salida de vehiculos">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Text>
+
+                  <!-- Placa para buscar -->
+                  <ImageView fitHeight="72.0" fitWidth="233.0" layoutX="92.0" layoutY="205.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtPlaca" alignment="CENTER" layoutX="92.0" layoutY="205.0" prefHeight="72.0" prefWidth="233.0" promptText="Placa" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </TextField>
+
+                  <!-- Nombre Conductor (Solo lectura) -->
+                  <ImageView fitHeight="72.0" fitWidth="233.0" layoutX="378.0" layoutY="205.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtNombreConductor" alignment="CENTER" editable="false" layoutX="378.0" layoutY="205.0" prefHeight="72.0" prefWidth="233.0" promptText="Conductor" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </TextField>
+
+                  <!-- ID Conductor (Solo lectura) -->
+                  <ImageView fitHeight="72.0" fitWidth="233.0" layoutX="667.0" layoutY="205.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtIdConductor" alignment="CENTER" editable="false" layoutX="667.0" layoutY="205.0" prefHeight="72.0" prefWidth="233.0" promptText="ID Conductor" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </TextField>
+
+                  <!-- Hora Salida -->
+                  <ImageView fitHeight="72.0" fitWidth="233.0" layoutX="92.0" layoutY="315.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtHoraSalida" alignment="CENTER" layoutX="92.0" layoutY="315.0" prefHeight="72.0" prefWidth="233.0" promptText="Hora Salida" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </TextField>
+
+                  <!-- Espacio Asignado (Solo lectura) -->
+                  <ImageView fitHeight="72.0" fitWidth="233.0" layoutX="378.0" layoutY="315.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtEspacioAsignado" alignment="CENTER" editable="false" layoutX="378.0" layoutY="315.0" prefHeight="72.0" prefWidth="233.0" promptText="Espacio" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </TextField>
+
+                  <!-- Descuento (%) -->
+                  <ImageView fitHeight="72.0" fitWidth="233.0" layoutX="667.0" layoutY="315.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtDescuento" alignment="CENTER" layoutX="667.0" layoutY="315.0" prefHeight="72.0" prefWidth="233.0" promptText="Descuento (%)" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </TextField>
+
+                  <Button fx:id="btnSalidaVehiculo" layoutX="378.0" layoutY="432.0" mnemonicParsing="false" onAction="#onSalidaVehiculo" prefHeight="72.0" prefWidth="233.0" style="-fx-background-color: #84E291;" text="Registrar Salida">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+
+                  <Button fx:id="btnBuscarVehiculo" layoutX="145.0" layoutY="280.0" mnemonicParsing="false" onAction="#onBuscarVehiculo" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #77DF86;" text="Buscar" textFill="WHITE">
+                      <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+
+                  <ImageView fitHeight="40.0" fitWidth="71.0" layoutX="21.0" layoutY="31.0">
+                     <image>
+                        <Image url="@imagenes/img_48.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnRegresarMenuOperador" layoutX="31.0" layoutY="31.0" mnemonicParsing="false" onAction="#onRegresarMenuOperador" opacity="0.0" prefHeight="40.0" prefWidth="52.0" text="Regresar" />
+
+                  <ImageView fitHeight="82.0" fitWidth="71.0" layoutX="474.0" layoutY="529.0">
+                     <image>
+                        <Image url="@imagenes/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox fx:id="cmbTipoVehiculo" disable="true" layoutX="682.0" layoutY="330.0" opacity="0.0" prefHeight="43.0" prefWidth="203.0" promptText="Tipo" style="-fx-background-color: transparent;" visible="false" />
+               </children>
+            </AnchorPane>
+         </children>
+      </Group>
+   </children>
+</StackPane>

@@ -1,7 +1,6 @@
 package co.edu.uniquindio.parqueaderouq.parquearoapp.model;
 
 public enum estadoEspacio {
-
-    DISPONIVEL, OCUPADO, FUERADESERVICIO
-
+    EN_SERVICIO,
+    FUERA_DE_SERVICIO
 }

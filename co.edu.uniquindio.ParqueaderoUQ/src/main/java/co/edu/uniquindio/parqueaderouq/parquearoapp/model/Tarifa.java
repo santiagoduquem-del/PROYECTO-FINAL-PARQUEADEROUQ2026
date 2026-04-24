@@ -1,25 +1,25 @@
 package co.edu.uniquindio.parqueaderouq.parquearoapp.model;
 
 public class Tarifa {
-
-    private String tipoVehiculo;
+    private tipoVehiculo tipo;
     private double valorPorHora;
     private double descuento;
 
-
-    public Tarifa(String tipoVehiculo, double valorPorHora, double descuento) {
-        this.tipoVehiculo = tipoVehiculo;
+    public Tarifa(tipoVehiculo tipo, double valorPorHora, double descuento) {
+        this.tipo = tipo;
         this.valorPorHora = valorPorHora;
         this.descuento = descuento;
     }
 
-
-    public String getTipoVehiculo() {
-        return tipoVehiculo;
+    public Tarifa() {
     }
 
-    public void setTipoVehiculo(String tipoVehiculo) {
-        this.tipoVehiculo = tipoVehiculo;
+    public tipoVehiculo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(tipoVehiculo tipo) {
+        this.tipo = tipo;
     }
 
     public double getValorPorHora() {
@@ -38,14 +38,20 @@ public class Tarifa {
         this.descuento = descuento;
     }
 
+    /**
+     * Calcula el valor neto por hora aplicando el descuento si existe.
+     * @return El valor por hora con el descuento aplicado.
+     */
+    public double calcularValorConDescuento() {
+        return valorPorHora * (1 - (descuento / 100));
+    }
+
     @Override
     public String toString() {
         return "Tarifa{" +
-                "tipoVehiculo='" + tipoVehiculo + '\'' +
+                "tipo=" + tipo +
                 ", valorPorHora=" + valorPorHora +
-                ", descuento=" + descuento +
+                ", descuento=" + descuento + "%" +
                 '}';
     }
 }
-
-

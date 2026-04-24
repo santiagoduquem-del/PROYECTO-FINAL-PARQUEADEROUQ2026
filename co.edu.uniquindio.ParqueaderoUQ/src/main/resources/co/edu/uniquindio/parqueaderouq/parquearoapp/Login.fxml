@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainStackPane" prefHeight="634.0" prefWidth="988.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parqueaderouq.parquearoapp.controller.LoginController">
+<StackPane fx:id="mainStackPane" prefHeight="634.0" prefWidth="988.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parqueaderouq.parquearoapp.controller.LoginController">
    <children>
       <Group fx:id="scalingGroup">
          <children>
@@ -44,12 +44,16 @@
                   </Label>
                   <PasswordField fx:id="PasswordContraseña" layoutX="766.0" layoutY="306.0" style="-fx-border-color: #84E291;" />
                   <TextField fx:id="txtIdentificacion" layoutX="766.0" layoutY="256.0" style="-fx-border-color: #84E291;" />
-                  <ImageView fitHeight="104.0" fitWidth="268.0" layoutX="650.0" layoutY="356.0">
-                     <image>
-                        <Image url="@imagenes/img_8.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="116.0" fitWidth="315.0" layoutX="627.0" layoutY="473.0">
+                  <Button fx:id="btnGoogle" layoutX="660.0" layoutY="356.0" mnemonicParsing="false" onAction="#onGoogleLogin" prefHeight="47.0" prefWidth="234.0" style="-fx-background-color: transparent; -fx-padding: 0;">
+                     <graphic>
+                        <ImageView fitHeight="56.0" fitWidth="253.0">
+                           <image>
+                              <Image url="@imagenes/img_11.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fitHeight="116.0" fitWidth="309.0" layoutX="633.0" layoutY="480.0">
                      <image>
                         <Image url="@imagenes/img_9.png" />
                      </image>
@@ -60,6 +64,16 @@
                      </image>
                   </ImageView>
                   <Button fx:id="btnIngreso" layoutX="719.0" layoutY="590.0" mnemonicParsing="false" onAction="#onIngreso" prefHeight="26.0" prefWidth="129.0" style="-fx-background-color: #84E291;" text="Ingresar" />
+                  <Button fx:id="btnApple" layoutX="657.0" layoutY="412.0" mnemonicParsing="false" onAction="#onAppleLogin" prefHeight="56.0" prefWidth="253.0" style="-fx-background-color: transparent; -fx-padding: 0;">
+                     <graphic>
+                        <ImageView fitHeight="56.0" fitWidth="253.0">
+                           <image>
+                              <Image url="@imagenes/img_12.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMicrosoft" layoutX="657.0" layoutY="511.0" mnemonicParsing="false" onAction="#onMicrosoftLogin" opacity="0.0" prefHeight="38.0" prefWidth="254.0" text="Siguiente" />
                </children>
             </AnchorPane>
          </children>

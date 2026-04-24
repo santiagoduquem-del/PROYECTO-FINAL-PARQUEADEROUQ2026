@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="mainStackPane" prefHeight="634.0" prefWidth="988.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.parqueaderouq.parquearoapp.controller.MenuFuncionesOperadorController">
+   <children>
+      <Group fx:id="scalingGroup">
+         <children>
+            <AnchorPane layoutX="487.0" layoutY="310.0" prefHeight="634.0" prefWidth="988.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <ImageView fitHeight="96.0" fitWidth="243.0" layoutX="682.0" layoutY="245.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="96.0" fitWidth="254.0" layoutX="67.0" layoutY="245.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="96.0" fitWidth="254.0" layoutX="374.0" layoutY="245.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="96.0" fitWidth="254.0" layoutX="226.0" layoutY="398.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="96.0" fitWidth="254.0" layoutX="539.0" layoutY="398.0">
+                     <image>
+                        <Image url="@imagenes/img_39.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="82.0" fitWidth="71.0" layoutX="474.0" layoutY="529.0">
+                     <image>
+                        <Image url="@imagenes/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="159.0" fitWidth="425.0" layoutX="289.0" layoutY="50.0">
+                     <image>
+                        <Image url="@imagenes/img_33.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="txtMenuOperador" layoutX="353.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Operador">
+                     <font>
+                        <Font size="42.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lblIngresoDeVehiculos" layoutX="405.0" layoutY="278.0" text="Ingreso de vehiculos">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblSalidaDeVehiculos" layoutX="713.0" layoutY="259.0" prefHeight="66.0" prefWidth="243.0" text="salida de vehiculos">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblVehiculosDentro" layoutX="591.0" layoutY="431.0" prefHeight="18.0" prefWidth="243.0" text="vehiculos dentro">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblEspaciosDisponibles" layoutX="98.0" layoutY="278.0" text="Espacios disponibles">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblGenerarReporte" layoutX="275.0" layoutY="431.0" text="Generar  reporte">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnIngresoVehiculos" layoutX="374.0" layoutY="245.0" mnemonicParsing="false" onAction="#onIngresoVehiculos" opacity="0.0" prefHeight="96.0" prefWidth="254.0" text="Ingreso Vehiculos" />
+                  <Button fx:id="btnSalidaVehiculos" layoutX="682.0" layoutY="245.0" mnemonicParsing="false" onAction="#onSalidaVehiculos" opacity="0.0" prefHeight="96.0" prefWidth="243.0" text="Salida Vehiculos" />
+                  <Button fx:id="btnEspaciosDisponibles" layoutX="67.0" layoutY="244.0" mnemonicParsing="false" onAction="#onEspaciosDisponibles" opacity="0.0" prefHeight="96.0" prefWidth="254.0" text="Espacios Disponibles" />
+                  <Button fx:id="btnGenerarReporte" layoutX="226.0" layoutY="398.0" mnemonicParsing="false" onAction="#onGenerarReporte" opacity="0.0" prefHeight="96.0" prefWidth="254.0" text="Generar Reporte" />
+                  <Button fx:id="btnVehiculosDentro" layoutX="539.0" layoutY="398.0" mnemonicParsing="false" onAction="#onVehiculosDentro" opacity="0.0" prefHeight="96.0" prefWidth="254.0" text="Vehiculos Dentro" />
+               </children>
+            </AnchorPane>
+         </children>
+      </Group>
+   </children>
+</StackPane>

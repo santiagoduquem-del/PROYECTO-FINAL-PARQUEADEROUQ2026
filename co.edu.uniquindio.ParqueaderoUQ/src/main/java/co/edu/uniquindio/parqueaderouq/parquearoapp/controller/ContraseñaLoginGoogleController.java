@@ -1,0 +1,125 @@
+package co.edu.uniquindio.parqueaderouq.parquearoapp.controller;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import co.edu.uniquindio.parqueaderouq.parquearoapp.utils.DataHolder;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import co.edu.uniquindio.parqueaderouq.parquearoapp.ClienteApplication;
+
+public class ContraseñaLoginGoogleController {
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private StackPane mainStackPane;
+
+    @FXML
+    private Group scalingGroup;
+
+    @FXML
+    private PasswordField ContraseñaOperadorGoogle;
+
+    @FXML
+    private Button btnSiguienteGoogle;
+
+    @FXML
+    void onVerificarContraseña(ActionEvent event) {
+        verificarContraseña();
+    }
+
+    @FXML
+    void onSiguienteGoogle(ActionEvent event) {
+        verificarContraseña();
+    }
+
+    private void verificarContraseña() {
+        String contrasenaIngresada = ContraseñaOperadorGoogle.getText();
+        String role = DataHolder.getInstance().getLoginRole();
+
+        if (contrasenaIngresada == null || contrasenaIngresada.isEmpty()) {
+            mostrarMensaje("Error", "Campo vacío", "Por favor ingrese la contraseña.", Alert.AlertType.ERROR);
+            return;
+        }
+
+        // Validación estricta por rol seleccionado en Google
+        if ("ADMIN".equals(role)) {
+            if (contrasenaIngresada.equals("1228")) {
+                abrirMenuAdministrador();
+            } else {
+                mostrarMensaje("Error", "Acceso denegado", "Contraseña incorrecta para el perfil Administrador.", Alert.AlertType.ERROR);
+            }
+        } else if ("OPERADOR".equals(role)) {
+            if (contrasenaIngresada.equals("1224")) {
+                abrirMenuOperador();
+            } else {
+                mostrarMensaje("Error", "Acceso denegado", "Contraseña incorrecta para el perfil Operador.", Alert.AlertType.ERROR);
+            }
+        }
+    }
+
+    private void abrirMenuOperador() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("MenuFuncionesOperador.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ContraseñaOperadorGoogle.getScene().getWindow();
+            stage.setTitle("Menú Operador - Parqueadero UQ");
+            stage.setScene(scene);
+            stage.setFullScreen(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void abrirMenuAdministrador() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(ClienteApplication.class.getResource("MenuFuncionesAdministrador.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ContraseñaOperadorGoogle.getScene().getWindow();
+            stage.setTitle("Menú Administrador - Parqueadero UQ");
+            stage.setScene(scene);
+            stage.setFullScreen(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle(titulo);
+        alert.setHeaderText(header);
+        alert.setContentText(contenido);
+        alert.showAndWait();
+    }
+
+    @FXML
+    void initialize() {
+        if (mainStackPane != null && scalingGroup != null) {
+            double initialWidth = 988.0;
+            double initialHeight = 634.0;
+            mainStackPane.widthProperty().addListener((obs, oldVal, newVal) -> {
+                double scale = Math.min(newVal.doubleValue() / initialWidth, mainStackPane.getHeight() / initialHeight);
+                scalingGroup.setScaleX(scale); scalingGroup.setScaleY(scale);
+            });
+            mainStackPane.heightProperty().addListener((obs, oldVal, newVal) -> {
+                double scale = Math.min(mainStackPane.getWidth() / initialWidth, newVal.doubleValue() / initialHeight);
+                scalingGroup.setScaleX(scale); scalingGroup.setScaleY(scale);
+            });
+        }
+    }
+}

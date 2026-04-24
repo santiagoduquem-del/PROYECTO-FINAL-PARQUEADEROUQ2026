@@ -1,13 +1,12 @@
 package co.edu.uniquindio.parqueaderouq.parquearoapp.model;
 
-public class Administrador extends Empleado{
+public class Administrador extends Empleado {
 
-    public Administrador(String nombre, int identificacion, String correo, int telefono, String usuario, String rol, String clave) {
-        super(nombre, identificacion, correo, telefono, usuario, rol, clave);
+    public Administrador(String nombre, String identificacion, String cargo, String correo, String telefono) {
+        super(nombre, identificacion, cargo, correo, telefono);
     }
 
-    @Override
-    public String toString() {
-        return "Administrador{}";
+    public Administrador() {
+        super();
     }
 }
